@@ -1,0 +1,46 @@
+@import "../scss/reset";
+
+body{
+    background-color: rgb(241,246,248);
+}
+
+.header{
+    max-width: 1440px;
+    height: 55px;
+    margin: 50px auto 0 auto;
+    width: 100%;
+    background-color: white;
+    border-radius: 100px;
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 8%), 0 12px 24px 0 rgb(62 117 240 / 5%);
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    position: relative;
+
+    &__from_direction{
+        display: flex;
+        align-items: center;
+
+        h5{
+            margin-right: 5px;
+        }
+
+
+        &__input_element{
+            display: flex;
+            align-items: center;
+            width: 300px;
+            height: 20px;
+            background-color: red;
+
+
+            &__item_added{
+                display: flex;
+                background-color: rgb(71,95,232);
+                padding: 5px;
+                border-radius: 100px;
+                color: white;
+            }
+        }
+    }
+}
