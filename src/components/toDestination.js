@@ -9,32 +9,32 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import "../scss/fromDestination.scss"
 
 
-const FromDestination = () => {
+const ToDestination = () => {
 
-    const {dinDestination, setToggleFrom, setSelectedFrom, selectedFrom} = useContext(ObjFly);
+    const {catreDestination, setToggleTo, selectTo, setSelectTo} = useContext(ObjFly);
 
 
     const selectFromElement = (item) =>{
-        setToggleFrom(false)
+        setToggleTo(false)
 
-        if(selectedFrom.includes(item)){
-            let deleteIncludes = selectedFrom.filter(element => element !== item)
-            setSelectedFrom(deleteIncludes)
-            setToggleFrom(true)
+        if(selectTo.includes(item)){
+            let deleteIncludes = selectTo.filter(element => element !== item)
+            setSelectTo(deleteIncludes)
+            setToggleTo(true)
 
         }else{
-            setSelectedFrom(prev => [...prev, item])
+            setSelectTo(prev => [...prev, item])
         }
     }
 
 
     const selectFromElementOther = (item) =>{
 
-        if(selectedFrom.includes(item)){
+        if(selectTo.includes(item)){
             return
         }else{
-            setSelectedFrom(prev => [...prev, item])
-            setToggleFrom(false)
+            setSelectTo(prev => [...prev, item])
+            setToggleTo(false)
         }
 
     }
@@ -42,9 +42,9 @@ const FromDestination = () => {
 
 
     const deleteAdded = (item) =>{
-        let deleteAdd = selectedFrom.filter(element => element !== item);
+        let deleteAdd = selectTo.filter(element => element !== item);
     
-        setSelectedFrom(deleteAdd)
+        setSelectTo(deleteAdd)
 
       }
 
@@ -53,10 +53,10 @@ const FromDestination = () => {
         <div className="from_destination">
 
             <div className="from_destination__input">
-                <h5>Din</h5>
-                {selectedFrom && selectedFrom.map((item, i) => (
+                <h5>Spre</h5>
+                {selectTo && selectTo.map((item, i) => (
               <div className="header__from_direction__input_element__item_added" key={i}>
-                <p onClick={() => setToggleFrom(true)} >{item}</p>
+                <p onClick={() => setToggleTo(true)} >{item}</p>
                 <CancelIcon fontSize="small" onClick={() => deleteAdded(item)}/>
               </div>
             ))}
@@ -64,9 +64,9 @@ const FromDestination = () => {
             </div>
 
 
-              {selectedFrom.length > 0 && <h5>Deja incluse</h5>}
+              {selectTo.length > 0 && <h5>Deja incluse</h5>}
 
-            {selectedFrom && selectedFrom.map((item, i) => (
+            {selectTo && selectTo.map((item, i) => (
             <div onClick={() => selectFromElement(item)} key={i} className="from_destination__icons_dest">
                <div className="from_destination__icons_dest__location_select">
                 <LocationCityIcon/>
@@ -79,9 +79,9 @@ const FromDestination = () => {
            </div>
             ))}
 
-           {selectedFrom.length > 0 && <hr/>}
+           {selectTo.length > 0 && <hr/>}
 
-            {dinDestination.map((item, i) => (
+            {catreDestination.map((item, i) => (
                <div onClick={() => selectFromElementOther(item)} key={i} className="from_destination__icons_dest">
                     <div className="from_destination__icons_dest__location_select">
                         <LocationCityIcon/>
@@ -98,4 +98,4 @@ const FromDestination = () => {
      );
 }
  
-export default FromDestination;
+export default ToDestination;

@@ -3,17 +3,20 @@
 
 .from_destination{
     position: absolute;
+    top: 0;
     background-color: white;
     border-radius: 10px;
     width: 560px;
+    transition: .3s ease;
 
 
     &__input{
         display: flex;
         align-items: center;
-        height: 70px;
+        height: 55px;
         border-bottom: 1px solid black;
-        background-color: blue;
+       
+       
 
         input{
             outline: none;
@@ -25,8 +28,16 @@
     &__icons_dest{
         display: flex;
         align-items: center;
+        justify-content: space-between;
         border-radius: 10px;
         height: 50px;
+
+
+        &__location_select{
+            display: flex;
+            align-items: center;
+        }
+        
        
         &:hover{
             background-color: red;
